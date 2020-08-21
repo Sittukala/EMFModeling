@@ -12,4 +12,6 @@ The EMF will then generate xmi file using the generated code which will represen
 Knowledge Gained:
  1. Understanding of code genertaion using EMF Modeling and the usecases,
  2. Understanding business perspective and representing them in various models.
- 3. Hands-on for one code-generation tool which will help generate code.
+ 3. Hands-on for one code-generation tool which will help generate code
+ 
+ Note: Please refer to gendev.hw1 for models and generated code.
