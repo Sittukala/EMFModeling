@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated hw1 -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gendev.hw1.presentation.Hw1ModelWizardID"
+            name="%_UI_Hw1ModelWizard_label"
+            class="gendev.hw1.presentation.Hw1ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Hw1ModelFile.gif">
+         <description>%_UI_Hw1ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated hw1 -->
+      <editor
+            id="gendev.hw1.presentation.Hw1EditorID"
+            name="%_UI_Hw1Editor_label"
+            icon="icons/full/obj16/Hw1ModelFile.gif"
+            extensions="hw1"
+            class="gendev.hw1.presentation.Hw1Editor"
+            contributorClass="gendev.hw1.presentation.Hw1ActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hw1" nsURI="http://www.example.org/hw1" nsPrefix="hw1">
+  <eClassifiers xsi:type="ecore:EClass" name="Users">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bloodGroup" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="age" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="registrations" upperBound="-1"
+        eType="#//RegistrationUsers" eOpposite="#//RegistrationUsers/user"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BloodDonor" eSuperTypes="#//Users">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEligible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BloodReceiver" eSuperTypes="#//Users">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="receiverID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RegistrationUsers" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" eType="#//Users"
+        eOpposite="#//Users/registrations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bloodbank" eType="#//BloodBank"
+        eOpposite="#//BloodBank/registrationusers"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registerDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnlineRegistration" eSuperTypes="#//RegistrationUsers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectRegistration" eSuperTypes="#//RegistrationUsers">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RegId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BloodBank">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hospital" upperBound="-1"
+        eType="#//Hospital" eOpposite="#//Hospital/bloodbank"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="registrationusers" upperBound="-1"
+        eType="#//RegistrationUsers" eOpposite="#//RegistrationUsers/bloodbank"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stocks" lowerBound="3"
+        upperBound="8" eType="#//Stock" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hospital">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bloodbank" lowerBound="3"
+        upperBound="5" eType="#//BloodBank" eOpposite="#//BloodBank/hospital"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrivateHospital" eSuperTypes="#//Hospital">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trackLocation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stock">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AvailableStockCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEmptyStock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+</ecore:EPackage>

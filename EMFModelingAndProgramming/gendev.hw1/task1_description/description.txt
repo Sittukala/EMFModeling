@@ -1,0 +1,9 @@
+						Blood Bank Management
+Primary Stakeholders for the business are Blood Donors, Blood Seekers,Blood Bank Management. 
+Secondary Stakeholders are Hospital owners, Doctors, Hospital workers, Blood Bank organisers, administrators. 
+Primary Business entity is Blood and other associated business entities are Blood Stock, Blood Repository, Orders, Clinical Tests.
+Blood Bank allows online and direct registration. Once registered, users can login and have the option to view their profile.
+Blood Bank organises camp to collect and lend blood. Blood Donors can donate blood if they meet the eligibility criteria. 
+The Blood Seekers can get blood if Blood type is available. If there is a change in stock anytime,Stock should be managed by blood bank and update repository. 
+Hospitals can also get blood from bloodbank separately. Also, Private hospitals can track blood donors in case of emergency.
+BloodBank should always hold Stock and Hospital should always be with associated to minimal set of Bloodbanks.

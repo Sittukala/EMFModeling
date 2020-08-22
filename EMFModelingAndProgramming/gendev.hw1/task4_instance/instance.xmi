@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hw1="http://www.example.org/hw1">
+  <hw1:BloodBank name="BloodBank1" address="Leicester" hospital="/5 /6" registrationusers="/1 /2">
+    <stocks AvailableStockCount="10"/>
+  </hw1:BloodBank>
+  <hw1:OnlineRegistration usename="Sittu" user="/3" bloodbank="/0" registerDate="2020-02-27T22:29:16.641+0000" userId="user1"/>
+  <hw1:DirectRegistration usename="Sittukala" user="/4" bloodbank="/0" registerDate="2020-02-27T22:29:16.644+0000" RegId="user2"/>
+  <hw1:Users name="user1" address="Tibet" bloodGroup="B+" age="22" contact="1010101" registrations="/1"/>
+  <hw1:Users name="user2" address="Nigeria" bloodGroup="AB+" age="21" contact="2020202" registrations="/2"/>
+  <hw1:Hospital name="HosptalA" address="LeicesterHospital" bloodbank="/0"/>
+  <hw1:PrivateHospital name="PrivateHosptalABC" address="NunetonRoyalHospital" bloodbank="/0" trackLocation="ABC"/>
+</xmi:XMI>
